@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body, html{
+    height: 100vh;
+    width: 100vw;
+}
+
+div#pagina{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+header{
+    border: 2px solid rgb(112, 112, 112);
+    padding: 20px;
+    text-align: center;
+    background-color: #00b925;
+    color: #e4840f;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.692);
+    font-weight: bolder;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+main > div#divLigas{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    width: 80%;
+    background-color: white;
+    padding: 10px;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+
+h2.tituloLigas{
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #00B925;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.268);
+    margin: 5px 10px;
+}
+
+div#divLigas > section.campeonatos{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 10px 0px;
+}
+
+div#divLigas section.campeonatos button{
+    cursor: pointer;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin: 5px;
+    flex:auto;
+}
+
+.btn_background{
+    background-position: center center;
+    background-size: cover;
+    color: #e4840f ;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.788);
+}
+
+.ocultar{
+    display: none;
+}
