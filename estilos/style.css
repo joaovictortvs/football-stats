@@ -22,13 +22,31 @@ div#pagina{
 }
 
 header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 2px solid rgb(112, 112, 112);
     padding: 20px;
     text-align: center;
     background-color: #00b925;
     color: #e4840f;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.692);
+    font-size: 2.5em;
     font-weight: bolder;
+    margin-bottom: 15px;
+}
+
+header > button{
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px 30px;
+    align-self: flex-start;
+    background-color: #3EBA57;
+}
+
+header > button > img{
+    width: 20px;
 }
 
 main{
@@ -80,5 +98,36 @@ div#divLigas section.campeonatos button{
 }
 
 .ocultar{
-    display: none;
+    display: none !important;
+}
+
+div.tabelaExibir{
+    width: 90%;
+}
+
+div.tabelaExibir > table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+div.tabelaExibir th{
+    background-color: #20BA00;
+    color: white;
+}
+
+div.tabelaExibir th, td{
+    text-align: center;
+    border: 1px solid #3EBA57;
+    padding: 10px;
+}
+
+div.tabelaExibir td#tdImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+div.tabelaExibir td img{
+    width: 40px;
 }
