@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabelas das principais ligas do mundo!</title>
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/mobile.css" media="screen and (max-width: 600px)">
 </head>
 <body>
     <div id="pagina">
@@ -27,11 +28,26 @@
                     <!--Internacionais-->
                     <h2 class="tituloLigas">Internacionais</h2>
                     <div>
-                        <button data-identificador="eng.1" style="background-image: url(img/premierleague.webp);" class="btn_background">Campeonato Inglês</button>
-                        <button data-identificador="esp.1" class="btn_background" style="background-image: url(img/laliga.png);">Campeonato Espanhol</button>
-                        <button data-identificador="ita.1" class="btn_background" style="background-image: url(img/seriea.jpg);">Campeonato Italiano</button>
-                        <button data-identificador="fra.1" class="btn_background" style="background-image: url(img/leagueone.png); background-size: contain; background-repeat: no-repeat; background-color: #091C3E;">Campeonato Francês</button>
-                        <button data-identificador="ger.1" class="btn_background" style="background-image: url(img/bundesliga.png); background-size: contain; background-repeat: no-repeat; background-color: #CF1218;">Campeonato Alemão</button>
+                        <button data-identificador="eng.1" style="background-image: url(img/premierleague.webp);" class="btn_background"></button>
+
+                        <button data-identificador="esp.1" class="btn_background" style="background-image: url(img/laliga.png);"></button>
+
+                        <button data-identificador="ita.1" class="btn_background" style="background-image: url(img/seriea.jpg);"></button>
+
+                        <button data-identificador="fra.1" class="btn_background" style="background-image: url(img/leagueone.png); background-size: contain; background-repeat: no-repeat; background-color: #091C3E;"></button>
+
+                        <button data-identificador="ger.1" class="btn_background" style="background-image: url(img/bundesliga.png); background-size: contain; background-repeat: no-repeat; background-color: #CF1218;"></button>
+
+                        <button data-identificador="por.1" class="btn_background" style="background-image: url(img/ligaportuguesa.png); background-size: contain; background-repeat: no-repeat; background-color: white;"></button>
+
+                        <button data-identificador="arg.1" class="btn_background" style="background-image: url(img/ligaargentina.png); background-size: contain; background-repeat: no-repeat; background-color: white;"></button>
+
+                        <button data-identificador="ned.1" class="btn_background" style="background-image: url(img/ligaholandesa.png); background-size: contain; background-repeat: no-repeat; background-color: white;"></button>
+
+                        <button data-identificador="tur.1" class="btn_background" style="background-image: url(img/turquialiga.png); background-size: contain; background-repeat: no-repeat; background-color: white;"></button>
+
+                        <button data-identificador="mex.1" class="btn_background" style="background-image: url(img/ligamexicana.png); background-size: contain; background-repeat: no-repeat; background-color: white;"></button>
+
                     </div>
                 </section>
             </div>
@@ -45,32 +61,9 @@
                         <th>Derrotas</th>
                         <th>Saldo de Gols</th>
                     </thead>
-                    <!-- <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td id="tdImg"> <div id="tdImagem"><img src="img/laliga.png" alt=""></div><div id="tdNome">BOT</div></td>
-                            <td>79</td>
-                            <td>28</td>
-                            <td>3</td>
-                            <td>30</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td id="tdImg"> <img src="img/laliga.png" alt="">BOT</td>
-                            <td>79</td>
-                            <td>28</td>
-                            <td>3</td>
-                            <td>30</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td id="tdImg"> <img src="img/laliga.png" alt="">BOT</td>
-                            <td>79</td>
-                            <td>28</td>
-                            <td>3</td>
-                            <td>30</td>
-                        </tr>
-                    </tbody> -->
+                    <tbody id="tbody">
+                        
+                    </tbody>
                 </table>
             </div>  
         </main>

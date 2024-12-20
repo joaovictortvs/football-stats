@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+div#divLigas > section.campeonatos > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -17,8 +17,7 @@ div#pagina{
     width: 100%;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: auto;
 }
 
 header{
@@ -43,6 +42,11 @@ header > button{
     padding: 10px 30px;
     align-self: flex-start;
     background-color: #3EBA57;
+}
+
+header > button:hover{
+    background-color: #48d564;
+    transition: background-color .3s;
 }
 
 header > button > img{
@@ -77,17 +81,32 @@ h2.tituloLigas{
 div#divLigas > section.campeonatos{
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 80%;
     padding: 10px 0px;
 }
 
+div#divLigas > section.campeonatos > div{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
 div#divLigas section.campeonatos button{
     cursor: pointer;
-    padding: 20px;
+    width: 178px;
+    padding: 30px 5px;
     border: 1px solid lightgray;
     border-radius: 10px;
     margin: 5px;
     flex:auto;
+}
+
+div#divLigas section.campeonatos button:hover{
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    padding: 33px 0px;
+    transition: border .2s;
+    transition: padding .5s;
 }
 
 .btn_background{
@@ -106,8 +125,14 @@ div.tabelaExibir{
 }
 
 div.tabelaExibir > table{
+    position: relative;
     width: 100%;
     border-collapse: collapse;
+}
+
+div.tabelaExibir > table > thead{
+    position: sticky;
+    top: 0px;
 }
 
 div.tabelaExibir th{
@@ -125,9 +150,8 @@ div.tabelaExibir td#tdImg{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
 }
 
 div.tabelaExibir td img{
-    width: 40px;
+    width: 25px;
 }
