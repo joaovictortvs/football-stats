@@ -2,21 +2,33 @@ let btns = document.querySelectorAll(".btn_background")
 const btn_ligas = [...btns]
 
 let liga = null
+let creatingTable = false
 
 btn_ligas.forEach((el)=>{
     el.addEventListener("click",(evt)=>{
         let liga = evt.target.getAttribute('data-identificador')
-        const url = `https://football-standings-api.vercel.app/leagues/${liga}/standings`;
-        fetch(url)
-        .then(res=>res.json())
-        .then(res=>{
-            let response = res
-            const times = response.data.standings
-            times.forEach((el)=>{
-                createTable(el)
-            })
-        })
+        const endpoint = `https://football-standings-api.vercel.app/leagues/${liga}/standings`;
 
+        if(creatingTable){
+            return
+        }
+
+        creatingTable = true
+        async function apiResponse(){
+            try{
+                const res = await fetch(endpoint)
+                const data = await res.json()
+                const times = data.data.standings
+                times.forEach((el)=>{
+                    createTable(el)
+                })
+            } catch(erro){
+                tableCatch(erro)
+            } finally{
+                creatingTable = false
+            }
+        }
+        apiResponse() 
     })
 })
 
@@ -87,33 +99,27 @@ const createTable=(time)=>{
 
 }
 
+const tableCatch=(erro)=>{
+    if(pagina_inicial == true){
+        pagina_inical = false
 
+        const divLigas = document.querySelector("#divLigas")
+        divLigas.classList.add("ocultar")
+        const divTabela = document.querySelector("#tabelaExibir")
+        divTabela.classList.remove("ocultar")
 
-// esp.1 (la liga) bra.1(brasileirao) bra.2 (brasileirao serie b) eng.1(premierleague) fra.1(ligue 1) ger.1(bundesliga) ita.1(serie a) por.1(portugal) arg.1(liga argentina)
+        const tbody = document.querySelector("#tbody")
 
-// <tbody>
-//                         <tr>
-//                             <td>1</td>
-//                             <td id="tdImg"> <div id="tdImagem"><img src="img/laliga.png" alt=""></div><div id="tdNome">BOT</div></td>
-//                             <td>79</td>
-//                             <td>28</td>
-//                             <td>3</td>
-//                             <td>30</td>
-//                         </tr>
-//                         <tr>
-//                             <td>1</td>
-//                             <td id="tdImg"> <img src="img/laliga.png" alt="">BOT</td>
-//                             <td>79</td>
-//                             <td>28</td>
-//                             <td>3</td>
-//                             <td>30</td>
-//                         </tr>
-//                         <tr>
-//                             <td>1</td>
-//                             <td id="tdImg"> <img src="img/laliga.png" alt="">BOT</td>
-//                             <td>79</td>
-//                             <td>28</td>
-//                             <td>3</td>
-//                             <td>30</td>
-//                         </tr>
-//                     </tbody>
+        const divCatch = document.createElement("div")
+        divCatch.setAttribute("class","catch")
+        tbody.appendChild(divCatch)
+
+        const h3 = document.createElement("h3")
+        h3.innerHTML = "Não foi possível acessar os dados da API!"
+        divCatch.appendChild(h3)
+
+        const p = document.createElement("p")
+        p.innerHTML = "Tente novamente mais tarde."
+        divCatch.appendChild(p)
+    }
+}

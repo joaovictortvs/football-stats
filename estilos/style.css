@@ -155,3 +155,7 @@ div.tabelaExibir td#tdImg{
 div.tabelaExibir td img{
     width: 25px;
 }
+
+.catch{
+    color: rgb(255, 21, 21);
+}
