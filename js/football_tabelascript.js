@@ -7,7 +7,7 @@ let creatingTable = false
 btn_ligas.forEach((el)=>{
     el.addEventListener("click",(evt)=>{
         let liga = evt.target.getAttribute('data-identificador')
-        const endpoint = `https://football-standings-api.vercel.app/leagues/${liga}/standings`;
+        const endpoint = `https://football-standings-api.vercel.app/leagues/${liga}/standings?season=2024&sort=asc`;
 
         if(creatingTable){
             return
@@ -44,11 +44,15 @@ btnVoltar.addEventListener("click",()=>{
     divLigas.classList.remove("ocultar")
     const divTabela = document.querySelector("#tabelaExibir")
     divTabela.classList.add("ocultar")
+
+    btnVoltar.classList.add("ocultar")
    
 })
 
 
 const createTable=(time)=>{
+    btnVoltar.classList.remove("ocultar")
+
     if(pagina_inicial == true){
         pagina_oficial = false
         const divLigas = document.querySelector("#divLigas")
